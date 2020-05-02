@@ -47,13 +47,27 @@ void setup_graphics() {
 
 void main(void)
 {
+  int x;
   setup_graphics();
   // draw message  
   vram_adr(NTADR_A(2,2));
   vram_write("HELLO, WORLD!", 12);
-  // enable rendering
-  ppu_on_all();
+
   // infinite loop
   while(1) {
+
+    // enable rendering
+    ppu_on_all();
+    for (x = 0; x < 50; x++)
+    {
+      ppu_wait_frame();
+    }
+    ppu_off();
+    for (x = 0; x < 50; x++)
+    {
+      ppu_wait_frame();
+    }
+    
   }
+  
 }
