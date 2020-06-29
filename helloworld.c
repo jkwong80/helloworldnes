@@ -50,7 +50,7 @@ void main(void)
   int x;
   setup_graphics();
   // draw message  
-  vram_adr(NTADR_A(2,2));
+  vram_adr(NTADR_A(10,10));
   vram_write("HELLO, WORLD!", 12);
 
   // infinite loop
